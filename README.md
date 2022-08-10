@@ -5,6 +5,12 @@ The purpose of this analysis is to find the relationship between the type of cit
 
 ## Results
 #### Summary DataFrame
-To showcase the differences between the different types of cities, the first thing that we did was to create a new DataFrame (DF) by grouping the data together by the city type.
+To showcase the differences between the types of cities, the first thing that we did was to create a new DataFrame (DF) by grouping the data together by the city type, from using the initial merged DF. Here is a snippet of the initial DF:
 
-![Summary DF]("analysis/summary_df.png")
+![PyBer Data DF](analysis/pyber_data_df.png)
+
+Here is a photo of the Summary DF that was created:
+
+![Summary DF](analysis/summary_df.png)
+
+Here, we can see that there are three different types of cities: Urban, Suburban, and Rural. Using the original data that was provided, I was able to find the 
