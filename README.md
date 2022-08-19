@@ -1,4 +1,4 @@
-# Module 5, Deliverable 3: PyBer Analysis
+# Challenge 5, Deliverable 3: PyBer Analysis
 ## Overview of the analysis
 #### Purpose
 The purpose of this analysis is to find the relationship between the different variables, and how each variable can have an affect on ride data per city type, in order to help the decision-makers at  the company we work at, PyBer. Our CEO, V. Isualize, has given our friend and co-worker Omar and I a new assignment - create a summary DataFrame of the ride-sharing data by city type and create a multiple-line graph that shows the total weekly fares for each city type.
