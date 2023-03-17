@@ -1,15 +1,18 @@
-# Challenge 5, Deliverable 3: PyBer Analysis
+# Rideshare Analysis
+
 ## Overview of the analysis
+
 #### Purpose
-The purpose of this analysis is to find the relationship between the different variables, and how each variable can have an affect on ride data per city type, in order to help the decision-makers at  the company we work at, PyBer. Our CEO, V. Isualize, has given our friend and co-worker Omar and I a new assignment - create a summary DataFrame of the ride-sharing data by city type and create a multiple-line graph that shows the total weekly fares for each city type.
+The purpose of this analysis is to find how different variables can have an affect on ride data per city type. My goal is to create a summary DataFrame of the ride-sharing data by city type and create a multiple-line graph that shows the total weekly fares for each city type.
 
 ## Results
+
 #### Summary DataFrame
-To showcase the differences between the types of cities, the first thing that we did was to create a new DataFrame (DF) by grouping the data together by the city type, from using the initial merged DF. Here is a snippet of the initial merged DF:
+To showcase the differences between the types of cities, the first thing that I did was to create a new DataFrame (DF) by grouping the data together by the city type, from using the initial merged DF. Here is a snippet of the initial merged DF:
 
 ![PyBer Data DF](analysis/pyber_data_df.png)
 
-Here we can see that there are six different columns: "city", "date", "fare", "ride_id", "driver_count", and "type". To make the Summary DF according to the challenge, we need to find some certain statistics, which we can do by using Pandas methods. We need to find the total amount of rides, and we need to group all of the data by city type. The code would look like this:
+Here, there are six different columns: "city", "date", "fare", "ride_id", "driver_count", and "type". To make the Summary DF, I need to find some certain statistics, which I can do by using methods from the Pandas library. I need to find the total amount of rides, and I need to group all of the data by city type. The code would look like this:
 
 `total_rides_by_type = pyber_data_df.groupby(["type"]).count()["ride_id"]`
 
@@ -29,11 +32,11 @@ Here is a photo of the Summary DF that was created:
 
 ![Summary DF](analysis/summary_df.png)
 
-Here, we can see that there are three different types of cities: Urban, Suburban, and Rural. From these stats, we were able to create a few other DFs. One such DF is the `weekly_cut_chron_pyber_data`. The process for creating the DF was a bit lengthy. To simplify, we created a new DF from `pyber_data_df` by grouping by `["type","date"]` and using  `.sum()["fare"]`. This groups all rows in the table by the city type and the date, putting the date in chronological order. We then reset the index to split all the data into their own seperate columns. We create a pivot table using the `pivot()` function on the index-reset DF. This pivot table now shows every instance of a ride, the ride's fare data, by city type, and in chronological order. From here, we can limit the data to only show from `2019-01-01:2019-04-29` as per the challenege instructions. We can also put the rides into weekly bins, which will give us the sum of ride fare (in USD) earned over 7 days for each city type. This latest DF is labeled as `weekly_cut_chron_pyber_data.png`. Here is an image of it:
+Here, you can see that there are three different types of cities: Urban, Suburban, and Rural. From these stats, I was able to create a few other DFs. One such DF is the `weekly_cut_chron_pyber_data`. The process for creating the DF was a bit lengthy. To simplify, I created a new DF from `pyber_data_df` by grouping by `["type","date"]` and using  `.sum()["fare"]`. This groups all rows in the table by the city type and the date, putting the date in chronological order. I then reset the index to split all the data into their own seperate columns. I create a pivot table using the `pivot()` function on the index-reset DF. This pivot table now shows every instance of a ride, the ride's fare data, by city type, and in chronological order. From here, I can limit the data to only show from `2019-01-01:2019-04-29`. I can also put the rides into weekly bins, which will give me the sum of ride fare (in USD) earned over 7 days for each city type. This latest DF is labeled as `weekly_cut_chron_pyber_data.png`. Here is an image of it:
 
 ![Weekly Cut Chronological PyBer Data](analysis/weekly_cut_chron_pyber_data.png)
 
-From here, we can create a line graph figure which holds the three columns of weekly data. Here is an image of the graph:
+From here, I can create a line graph figure which holds the three columns of weekly data. Here is an image of the graph:
 
 ![Final Line Graph](analysis/Challenge_Fig.png)
 
@@ -57,6 +60,7 @@ Let's explain how each factor affects city type performance:
 - Following this logic for the other two city types explains their performance.
 
 ## Summary
+
 #### Conclusion
 In conclusion, the Urban city type is by far the most profitable city type for PyBer. It would make sense to allocate the majority of resources there. But the other two settings should not be ignored either. Here are three recommendations to the CEO, V. Isualize, that I think could help bring in more profits:
 1. __Lower the cost of fare per ride in rural areas__. While there is only a fraction of the audience in this city type, some customers may refuse the service because the average cost of the fare is so high. There are too many drivers who are making a nice sum of money compared to the riders who either cannot afford it or do not want to pay as much for one.
