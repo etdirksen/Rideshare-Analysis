@@ -2,10 +2,10 @@
 
 ## Overview of the analysis
 
-#### Purpose
+### Purpose
 The purpose of this analysis is to find how different variables can have an affect on ride data per city type. My goal is to create a summary DataFrame of the ride-sharing data by city type and create a multiple-line graph that shows the total weekly fares for each city type.
 
-## Results
+### Results
 
 #### Summary DataFrame
 To showcase the differences between the types of cities, the first thing that I did was to create a new DataFrame (DF) by grouping the data together by the city type, from using the initial merged DF. Here is a snippet of the initial merged DF:
